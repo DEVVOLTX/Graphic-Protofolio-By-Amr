@@ -1,14 +1,14 @@
 /* =========================================
-   RESET - تصفير الهوامش
+   RESET - تصفير الافتراضي
 ========================================= */
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 
 /* =========================================
-   ROOT VARIABLES - الألوان الأساسية
+   COLORS - الألوان الأساسية
 ========================================= */
 :root{
-  --yellow:#FFC400; /* الأصفر الأساسي */
-  --orange:#FF8C00; /* البرتقالي بتاع اللوجو الجديد */
+  --yellow:#FFC400; /* لون التمييز */
+  --orange:#FF8C00; /* لون البراند الجديد */
   --white:#fff;
   --ink:#0a0a14; /* الخلفية الغامقة */
 }
@@ -20,54 +20,56 @@ html,body{height:100%}
 body{
   font-family:'Inter',sans-serif;
   color:var(--white);
-  overflow:hidden;
-  /* تدرج برتقالي من فوق يمين */
+  overflow:hidden; /* منع السكرول في الديسكتوب */
+  /* تدرج برتقالي من اليمين */
   background:
     radial-gradient(120% 120% at 100% 0%, var(--orange) 0%, #7a3a0a 38%, transparent 65%),
     var(--ink);
 }
 ul{list-style:none}
-a{color:inherit}
+a{color:inherit;text-decoration:none}
 
 /* =========================================
-   SIDEBAR - القائمة الجانبية
+   SIDEBAR - القائمة الجانبية (ديسكتوب)
 ========================================= */
 .side{
-  position:fixed; left:0; top:0; bottom:0; width:190px;
-  display:flex; flex-direction:column; justify-content:center;
-  padding-left:2.2rem; z-index:5; gap:2rem;
+  position:fixed;left:0;top:0;bottom:0;width:190px; /* عرض ثابت */
+  display:flex;flex-direction:column;justify-content:center;
+  padding-left:2.2rem;z-index:10;gap:2rem;
 }
-/* لوجو صغير فوق */
-.brand-mini{display:flex;align-items:center;gap:.6rem;position:absolute;top:2rem;left:2.2rem}
-.brand-mini img{width:36px;height:36px;border-radius:8px;background:var(--orange)}
+.brand-mini{
+  display:flex;align-items:center;gap:.6rem;
+  position:absolute;top:2rem;left:2.2rem; /* فوق خالص */
+}
+.brand-mini img{
+  width:36px;height:36px;border-radius:8px;
+  object-fit:cover;background:var(--orange);
+}
 .brand-mini span{font-family:'Anton',sans-serif;letter-spacing:.08em}
-/* لينكات القائمة */
 .side ul{display:flex;flex-direction:column;gap:2.1rem}
 .side a{
-  font-family:'Anton',sans-serif; text-transform:uppercase;
-  text-decoration:none; transition:.2s;
+  font-family:'Anton',sans-serif;text-transform:uppercase;
+  transition:.2s; /* حركة ناعمة */
 }
 .side a:hover{color:var(--yellow);transform:translateX(4px)}
-.side a.active{color:var(--yellow)}
+.side a.active{color:var(--yellow)} /* القسم النشط */
+.dev-link a{
+  color:var(--orange);font-size:.8rem;
+  border:1px solid var(--orange);padding:.3rem.6rem;border-radius:4px;
+}
 
 /* =========================================
-   STAGE & PANELS - منطقة العرض
+   STAGE - حاوية الأقسام
 ========================================= */
-.stage{position:fixed;inset:0 0 0 190px}
+.stage{position:fixed;inset:0 0 0 190px} /* جنب السايدبار */
 .panel{
-  position:absolute; inset:0; padding:5rem 3rem 5rem 2rem;
-  opacity:0; visibility:hidden; transform:translateY(14px);
-  transition:opacity.4s,transform.4s,visibility.4s;
+  position:absolute;inset:0;
+  padding:5rem 3rem;
+  opacity:0;visibility:hidden;transform:translateY(14px);
+  transition:opacity.4s, transform.4s;
   overflow-y:auto;
 }
 .panel.active{opacity:1;visibility:visible;transform:none}
-
-/* خطوط بيضاء فوق وتحت */
-.stage::before,.stage::after{
-  content:''; position:absolute; left:12%; right:12%; height:2px;
-  background:linear-gradient(90deg,transparent,#fff 20%,#fff 80%,transparent);
-}
-.stage::before{top:1.6rem}.stage::after{bottom:1.6rem}
 
 /* =========================================
    HERO - الواجهة الرئيسية
@@ -75,46 +77,59 @@ a{color:inherit}
 .hero{position:absolute;left:2rem;top:50%;transform:translateY(-50%)}
 .year{font-family:'Anton',sans-serif;font-size:1.5rem}
 .year b{color:var(--yellow)}
-.giant{font-family:'Anton',sans-serif;font-size:clamp(4rem,13vw,10rem);line-height:.95}
-.w{color:var(--white)}.y{color:var(--yellow)}
-
-/* صورة الشخص المقطوعة */
+.giant{
+  font-family:'Anton',sans-serif;
+  font-size:clamp(4rem,13vw,10rem); /* يكبر ويصغر حسب الشاشة */
+  line-height:.9;text-transform:lowercase;
+}
+.w{color:#fff}.y{color:var(--yellow)}
+.role{font-family:'Anton',sans-serif;margin-top:.6rem}
+.role b{color:var(--yellow)}
+.name{opacity:.7;font-size:.75rem;letter-spacing:.3em;text-transform:uppercase;margin-top:.4rem}
 .cutout{
-  position:absolute;right:3rem;bottom:0;height:min(80vh,560px);
-  filter:drop-shadow(0 0 2px #fff) drop-shadow(0 16px 30px rgba(0,0,0,.45));
+  position:absolute;right:3rem;bottom:0;
+  height:min(80vh,560px);
+  filter:drop-shadow(0 16px 30px rgba(0,0,0,.45));
 }
 
 /* =========================================
-   GRID GALLERY - معرض الصور
+   GRID - معرض الصور
 ========================================= */
 .grid{display:grid;gap:1rem;max-width:1100px}
 .g3{grid-template-columns:repeat(3,1fr)}
-.g4{grid-template-columns:repeat(4,1fr)}
 figure{position:relative;overflow:hidden;background:#111;border-radius:2px}
 figure.featured{outline:2px solid var(--orange);outline-offset:2px} /* تمييز اللوجو الجديد */
-figure img{width:100%;height:100%;object-fit:cover;transition:transform.5s}
-figure:hover img{transform:scale(1.06)}
-.sq figure{aspect-ratio:1} /* مربع للوجوهات */
-.tall figure{aspect-ratio:3/4} /* طويل للعربيات */
+figure img{width:100%;height:100%;object-fit:cover;display:block}
+.sq figure{aspect-ratio:1} /* مربع */
 figcaption{
   position:absolute;left:0;right:0;bottom:0;
-  padding:1.6rem.8rem.6rem;
-  background:linear-gradient(transparent,rgba(0,0,0,.85));
-  transform:translateY(100%);transition:.3s;
+  padding:1rem.6rem;background:linear-gradient(transparent,rgba(0,0,0,.85));
+  font-family:'Anton',sans-serif;font-size:.8rem;text-transform:uppercase;
 }
-figure:hover figcaption{transform:none}
 
 /* =========================================
-   RESPONSIVE - موبايل وتابلت
+   MOBILE FIX - إصلاح مشكلة الموبايل اللي في الصورة
 ========================================= */
-@media (max-width:700px){
-  body{overflow:auto}
+@media (max-width:768px){
+  body{overflow:auto} /* نسمح بالسكرول */
+
+  /* السايدبار يبقى فوق أفقي */
  .side{
-    position:fixed;inset:0 0 auto 0;width:auto;height:52px;
-    flex-direction:row;padding:0 1rem;background:rgba(10,10,20,.92);
+    inset:0 0 auto 0; /* فوق */
+    width:100%;height:54px;
+    flex-direction:row;align-items:center;
+    padding:0 1rem;
+    background:rgba(10,10,20,.96);backdrop-filter:blur(10px);
   }
- .side ul{flex-direction:row;gap:1.3rem}
- .stage{inset:52px 0 0 0}
- .panel{padding:3.2rem 1.2rem 3rem}
- .g3{grid-template-columns:repeat(2,1fr)}
+ .brand-mini{display:none} /* نخفيه عشان ميزحمش المنيو - ده سبب كلمة ME اللي لازقة */
+ .side ul{flex-direction:row;gap:1.1rem;overflow-x:auto;width:100%}
+ .side a{font-size:.82rem;white-space:nowrap}
+
+  /* الأقسام تبقى تحت بعض */
+ .stage{position:relative;inset:auto;padding-top:54px}
+ .panel{position:relative;inset:auto;min-height:100vh;display:none;padding:2rem 1.2rem}
+ .panel.active{display:block;opacity:1;visibility:visible}
+ .hero{position:relative;left:auto;top:auto;transform:none;margin-top:4rem}
+ .cutout{display:none} /* نخفي البورتريه البايظ لحد ما ترفعه */
+ .g3{grid-template-columns:repeat(2,1fr)} /* عمودين في الموبايل */
 }
