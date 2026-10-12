@@ -1,150 +1,115 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- ================= META ================= -->
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <meta name="description" content="Amr Essam — A Wolf Brand 2026: Graphic Designer + Software Engineer. Logos, car posters, client work."/>
+  <meta name="description" content="Amr Essam — A Wolf Brand 2026: Graphic Designer + Software Engineer"/>
   <meta name="theme-color" content="#0a0a14"/>
-  <meta property="og:type" content="website"/>
-  <meta property="og:title" content="Amr Essam — A Wolf Brand Portfolio 2026"/>
-  <meta property="og:description" content="Logos, cinematic car posters, and client work by A Wolf Brand."/>
-  <meta property="og:image" content="images/wolf-avatar.png"/>
-  <link rel="icon" href="images/wolf-avatar.png" type="image/png"/>
+  <link rel="icon" href="images/wolf-a-logo.png"/>
   <title>Amr Essam — A Wolf Brand 2026</title>
-
-  <!-- ================= FONTS ================= -->
-  <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;600;700&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
 
-<!-- ================= TOP NAV - زي Claude ================= -->
-<aside class="side" id="side">
-  <!-- لوجو مصغر - بيظهر في الديسكتوب -->
+<aside class="side">
   <div class="brand-mini">
-    <img src="images/wolf-avatar.png" alt="Wolf"/>
-    <span>A.ESSAM</span>
+    <img src="images/wolf-a-logo.png" alt="Wolf"/>
+    <span>A.WOLF</span>
   </div>
-  <ul role="tablist" aria-label="Portfolio sections">
+  <ul>
     <li><a href="#main" data-t="main" class="active">MAIN</a></li>
     <li><a href="#about" data-t="about">ABOUT ME</a></li>
     <li><a href="#logo" data-t="logo">LOGO</a></li>
     <li><a href="#cars" data-t="cars">CAR POSTERS</a></li>
     <li><a href="#clients" data-t="clients">CLIENT WORK</a></li>
     <li><a href="#contact" data-t="contact">CONTACT</a></li>
-    <li class="dev-link"><a href="https://amressam.is-a.dev" target="_blank">DEV PORTFOLIO</a></li>
+    <li class="dev"><a href="https://amressam.is-a.dev" target="_blank">DEV PORTFOLIO →</a></li>
   </ul>
 </aside>
 
-<!-- ================= STAGE ================= -->
 <main class="stage">
 
-  <!-- ===== MAIN - زي صورة 1 ===== -->
+  <!-- MAIN -->
   <section class="panel active" id="main">
-    <div class="rule top"></div>
     <div class="hero">
       <p class="year">20<b>26</b></p>
-      <!-- port أصفر + folio أبيض زي تصميم Claude -->
-      <h1 class="giant"><span class="w">port</span><span class="y">folio</span></h1>
+      <h1 class="giant"><span class="y">port</span><span class="w">folio</span></h1>
       <p class="role">GRAPHICS <b>DESIGNER</b></p>
       <p class="name">Amr Essam — A Wolf Brand</p>
     </div>
-    <!-- أفاتار الذئب بدال صورتك -->
-    <img class="cutout" src="images/wolf-avatar.png" alt="A Wolf Brand Avatar"/>
-    <div class="rule bottom"></div>
+    <img class="cutout" src="images/wolf-a-logo.png" alt="A Wolf Brand Logo"/>
   </section>
 
-  <!-- ===== ABOUT - زي صورة 2 ===== -->
+  <!-- ABOUT -->
   <section class="panel" id="about">
-    <div class="rule top"></div>
     <h2 class="title"><span class="w">ABOUT</span> <span class="y">ME!</span></h2>
     <div class="about-body">
       <p>Hi, I'm <b>Amr Essam</b>, founder of <b>A Wolf Brand</b> — Graphic Designer and Software Engineering student from Kafr El Dawar, Egypt.</p>
       <p>Every design tells a story — clean, bold, and built to leave a lasting impression. I create logos, cinematic car posters, social media visuals and photo edits that connect emotion with imagination.</p>
-      
       <h3 class="title sm"><span class="w">SOFT</span><span class="y">WARE!</span></h3>
       <ul class="tools">
-        <li class="ps">Ps</li>
-        <li class="ai">Ai</li>
-        <li class="pr">Pr</li>
-        <li class="pa">PicsArt</li>
+        <li class="ps">Ps</li><li class="ai">Ai</li><li class="pr">Pr</li><li class="pa">PicsArt</li>
       </ul>
       <div class="cta">
         <a href="mailto:amrt6509@gmail.com">Hire Me</a>
         <a href="https://amressam.is-a.dev" target="_blank" class="ghost">Dev Portfolio</a>
       </div>
     </div>
-    <img class="cutout small" src="images/wolf-avatar.png" alt="Wolf" loading="lazy"/>
-    <div class="rule bottom"></div>
+    <img class="cutout small" src="images/wolf-a-logo.png" alt="Wolf"/>
   </section>
 
-  <!-- ===== LOGO - زي صورة 3 ===== -->
+  <!-- LOGO -->
   <section class="panel" id="logo">
-    <div class="rule top"></div>
     <h2 class="title"><span class="w">LO</span><span class="y">GO</span></h2>
-    <div class="grid g3 sq">
-      <!-- اللوجو الجديد مميز -->
-      <figure class="featured">
-        <img loading="lazy" src="images/wolf-avatar.png" alt="A Wolf Brand 2026"/>
-        <figcaption>A Wolf - Main Brand 2026</figcaption>
-      </figure>
-      <figure><img loading="lazy" src="images/logo1.jpg" alt="AMR Official logo"/><figcaption>AMR Official</figcaption></figure>
-      <figure><img loading="lazy" src="images/logo2.jpg" alt="AMR Essam cyan logo"/><figcaption>AMR Essam</figcaption></figure>
-      <figure><img loading="lazy" src="images/logo3.jpg" alt="Amour Official logo"/><figcaption>Amour Official</figcaption></figure>
-      <figure><img loading="lazy" src="images/logo4.jpg" alt="Mora Editz logo"/><figcaption>Mora Editz</figcaption></figure>
-      <figure><img loading="lazy" src="images/logo5.jpg" alt="AMR Essam red logo"/><figcaption>AMR Essam Red</figcaption></figure>
-      <figure><img loading="lazy" src="images/logo6.jpg" alt="Mora Edits blue logo"/><figcaption>Mora Edits Blue</figcaption></figure>
+    <div class="grid g3">
+      <figure class="featured"><img loading="lazy" src="images/wolf-a-logo.png" alt="Main Logo"/><figcaption>A Wolf — Main 2026</figcaption></figure>
+      <figure><img loading="lazy" src="images/logo1.jpg" alt=""/><figcaption>AMR Official</figcaption></figure>
+      <figure><img loading="lazy" src="images/logo2.jpg" alt=""/><figcaption>AMR Essam</figcaption></figure>
+      <figure><img loading="lazy" src="images/logo3.jpg" alt=""/><figcaption>Amour Official</figcaption></figure>
+      <figure><img loading="lazy" src="images/logo4.jpg" alt=""/><figcaption>Mora Editz</figcaption></figure>
+      <figure><img loading="lazy" src="images/logo5.jpg" alt=""/><figcaption>AMR Red</figcaption></figure>
     </div>
-    <div class="rule bottom"></div>
   </section>
 
-  <!-- ===== CARS - زي صورة 4 ===== -->
+  <!-- CARS -->
   <section class="panel" id="cars">
-    <div class="rule top"></div>
     <h2 class="title"><span class="w">CAR</span> <span class="y">POSTERS!</span></h2>
-    <div class="grid g4 tall">
-      <figure><img loading="lazy" src="images/car1.jpg" alt="BMW M4 Competition"/><figcaption>BMW M4 Competition</figcaption></figure>
-      <figure><img loading="lazy" src="images/car2.jpg" alt="Lamborghini Revuelto"/><figcaption>Lamborghini Revuelto</figcaption></figure>
-      <figure><img loading="lazy" src="images/car3.jpg" alt="BMW M5"/><figcaption>BMW M5</figcaption></figure>
-      <figure><img loading="lazy" src="images/car4.jpg" alt="Bugatti Tourbillon"/><figcaption>Bugatti Tourbillon</figcaption></figure>
-      <figure><img loading="lazy" src="images/car5.jpg" alt="Pagani Huayra Roadster BC"/><figcaption>Pagani Huayra Roadster BC</figcaption></figure>
-      <figure><img loading="lazy" src="images/car6.jpg" alt="McLaren 750S"/><figcaption>McLaren 750S</figcaption></figure>
-      <figure><img loading="lazy" src="images/car7.jpg" alt="Porsche 911 GT3 RS"/><figcaption>Porsche 911 GT3 RS</figcaption></figure>
-      <figure><img loading="lazy" src="images/car8.jpg" alt="Koenigsegg Jesko Attack"/><figcaption>Koenigsegg Jesko Attack</figcaption></figure>
+    <div class="grid g4">
+      <figure><img loading="lazy" src="images/car1.jpg" alt=""/><figcaption>BMW M4 Competition</figcaption></figure>
+      <figure><img loading="lazy" src="images/car2.jpg" alt=""/><figcaption>Lamborghini Revuelto</figcaption></figure>
+      <figure><img loading="lazy" src="images/car3.jpg" alt=""/><figcaption>BMW M5</figcaption></figure>
+      <figure><img loading="lazy" src="images/car4.jpg" alt=""/><figcaption>Bugatti Tourbillon</figcaption></figure>
+      <figure><img loading="lazy" src="images/car5.jpg" alt=""/><figcaption>Pagani Huayra BC</figcaption></figure>
+      <figure><img loading="lazy" src="images/car6.jpg" alt=""/><figcaption>McLaren 750S</figcaption></figure>
+      <figure><img loading="lazy" src="images/car7.jpg" alt=""/><figcaption>Porsche 911 GT3 RS</figcaption></figure>
+      <figure><img loading="lazy" src="images/car8.jpg" alt=""/><figcaption>Koenigsegg Jesko</figcaption></figure>
     </div>
-    <div class="rule bottom"></div>
   </section>
 
-  <!-- ===== CLIENTS ===== -->
+  <!-- CLIENTS -->
   <section class="panel" id="clients">
-    <div class="rule top"></div>
     <h2 class="title"><span class="w">CLIENT</span> <span class="y">WORK</span></h2>
-    <div class="grid g2 tall">
-      <figure><img loading="lazy" src="images/client1.jpg" alt="Hamo Samy artist poster"/><figcaption>Hamo Samy — Artist Branding</figcaption></figure>
-      <figure><img loading="lazy" src="images/client2.jpg" alt="Mohammed cinematic edit"/><figcaption>Mohammed — Cinematic Edit</figcaption></figure>
+    <div class="grid g2">
+      <figure><img loading="lazy" src="images/client1.jpg" alt=""/><figcaption>Hamo Samy — Artist Branding</figcaption></figure>
+      <figure><img loading="lazy" src="images/client2.jpg" alt=""/><figcaption>Mohammed — Cinematic Edit</figcaption></figure>
     </div>
-    <div class="rule bottom"></div>
   </section>
 
-  <!-- ===== CONTACT - زي آخر صورة ===== -->
+  <!-- CONTACT -->
   <section class="panel" id="contact">
-    <div class="rule top"></div>
     <h2 class="title"><span class="w">GET IN</span> <span class="y">TOUCH</span></h2>
     <ul class="contact">
       <li><span>Email</span><a href="mailto:amrt6509@gmail.com">amrt6509@gmail.com</a></li>
       <li><span>Phone</span><a href="tel:+201551657717">+20 155 165 7717</a></li>
-      <li><span>Instagram</span><a href="https://www.instagram.com/3am_our1430" target="_blank" rel="noopener">@3am_our1430</a></li>
-      <li><span>X</span><a href="https://x.com/Amr2043275" target="_blank" rel="noopener">@Amr2043275</a></li>
-      <li><span>GitHub</span><a href="https://github.com/DEVVOLTX" target="_blank" rel="noopener">DEVVOLTX</a></li>
+      <li><span>Instagram</span><a href="https://www.instagram.com/3am_our1430" target="_blank">@3am_our1430</a></li>
+      <li><span>X</span><a href="https://x.com/Amr2043275" target="_blank">@Amr2043275</a></li>
+      <li><span>GitHub</span><a href="https://github.com/DEVVOLTX" target="_blank">DEVVOLTX</a></li>
     </ul>
     <p class="badge">Available for Freelance — A Wolf Brand 2026</p>
-    <div class="rule bottom"></div>
   </section>
 
 </main>
-
 <script src="script.js"></script>
 </body>
 </html>
