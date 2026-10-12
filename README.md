@@ -1,12 +1,12 @@
-A.ESSAM — A Wolf Brand | Graphic Portfolio 2026
-
 <p align="center">
-  <img src="images/wolf-a-logo.png" alt="A Wolf Logo" width="220"/>
+  <img src="images/aet-logo.jpg" alt="AET Designs Logo" width="220"/>
 </p>
 
+<h1 align="center">AET Designs — Graphic Portfolio 2026</h1>
+
 <p align="center">
-  <strong>Graphic Designer + Software Engineer</strong><br/>
-  Founder of <b>A Wolf Brand</b> — Kafr El Dawar, Egypt
+  <strong>Graphic Designer + Software Engineering Student</strong><br/>
+  Amr Essam — Kafr El Dawar, Egypt
 </p>
 
 <p align="center">
@@ -17,101 +17,62 @@ A.ESSAM — A Wolf Brand | Graphic Portfolio 2026
 
 ---
 
-🎨 About Me
+## ✨ Features
 
-Hi, I'm **Amr Essam**. I'm a passionate Graphic Designer and Software Engineering student.
+- **Identity taken from the AET logo:** pure black, white and smoke grey with a spotlight beam and tribal blade dividers — deliberately different from the dev portfolio
+- **The logo is the hero:** its black background melts into the page; same logo is the favicon and social preview
+- **One filterable gallery:** ALL / LOGOS / CAR POSTERS / CLIENTS in a masonry layout (work is greyscale and lights up in colour on hover on desktop)
+- **Lightbox viewer:** click any piece to see it full size (← / → / Esc / swipe), navigates only through the active filter
+- **Responsive & accessible:** alt text, keyboard focus, skip link, reduced-motion support, lazy-loaded images
 
-I build bold, clean, story-driven designs — logos, car posters, client branding, and cinematic edits.
+## 🛠️ Tech Stack
 
-> **Every design tells a story.**
+HTML5 • CSS3 (variables, grid, flexbox) • Vanilla JavaScript • Fonts: Orbitron + Rajdhani • Hosted on GitHub Pages
 
-✨ What's New in V2 (2026)
+## 📁 Project Structure
 
-- **New Brand Identity:** Wolf A logo with signature orange `#FF8C00`
-- **Featured Logo:** New wolf brand is highlighted as the main logo
-- **Smart Navigation:** Sidebar links + URL hash + Arrow keys + Mobile swipe
-- **Memory:** Saves last visited section in `localStorage`
-- **Performance:** Lazy loading for all images + optimized cutout
-- **Fully Responsive:** Mobile, tablet, desktop
-
-🛠️ Tech Stack
-
-- **HTML5** — Semantic sections
-- **CSS3** — CSS Variables, Grid, Flexbox, Radial gradients
-- **JavaScript** — 100% Vanilla, no frameworks
-- **Fonts** — Anton (titles) + Inter (body)
-- **Hosting** — GitHub Pages
-
-📁 Project Structure
-
+```
 Graphic-Protofolio-By-Amr/
 ├── images/
-│   ├── http://wolf-a-logo.png          # NEW 2026 Main Brand
-│   ├── http://wolf-a-letter-only.png   # Letter A isolated
-│   ├── http://avatar-cutout.png        # Hero cutout
-│   ├── http://logo1.jpg - http://logo6.jpg    # Logo gallery
-│   ├── http://car1.jpg - http://car8.jpg      # Car posters
-│   └── http://client1.jpg, http://client2.jpg # Client work
-├── http://index.html                   # Main structure
-├── http://style.css                    # All styles + variables
-├── http://script.js                    # Navigation + swipe + storage
-└── http://README.md                    # This file
+│   ├── aet-logo.jpg          # Main logo (hero + gallery)
+│   ├── wolf-a-logo.jpg       # A Wolf logo (gallery)
+│   ├── avatar.jpg            # About section photo
+│   ├── logo1.jpg … logo6.jpg # Logo gallery
+│   ├── car1.jpg … car8.jpg   # Car posters
+│   └── client1.jpg, client2.jpg
+├── favicon.ico / favicon-16.png / favicon-32.png
+├── apple-touch-icon.png      # iOS home screen icon
+├── icon-192.png / icon-512.png
+├── og-image.jpg              # Link preview (1200×630)
+├── index.html
+├── style.css
+└── script.js
+```
 
-🎨 Brand Colors
+## 🎨 Colors
 
-| Color | Hex | Usage |
-| :--- | :--- | :--- |
-| Yellow | `#FFC400` | Accent / Active state |
-| Orange | `#FF8C00` | Wolf Brand / Theme color |
-| Ink | `#0a0a14` | Background |
-| White | `#FFFFFF` | Text / Titles |
+| Color | Hex       | Usage                  |
+| :---- | :-------- | :--------------------- |
+| Black | `#000000` | Background (matches logo) |
+| White | `#f4f4f4` | Text / buttons / accents |
+| Grey  | `#9a9a9a` | Secondary text         |
 
-🚀 How to Run
+## 🚀 Run
 
-1. Clone the repo:
-   ```bash
-   git clone https://github.com/DEVVOLTX/Graphic-Protofolio-By-Amr.git
-2. Add `wolf-a-logo.png` to `/images/` folder
-3. Open `index.html` — no build step needed, it just works.
+```bash
+git clone https://github.com/DEVVOLTX/Graphic-Protofolio-By-Amr.git
+```
+Open `index.html` — no build step needed.
 
-🧭 Navigation Logic
-// Core function
-function show(id) {
-  // 1. Toggle active class on panels
-  // 2. Toggle active class on sidebar links
-  // 3. Save to localStorage
-  // 4. Update URL hash
-}
-- Click → `show()` 
-- Keyboard → ArrowUp / ArrowDown / ArrowLeft / ArrowRight
-- Mobile → Swipe left / right
-- URL → `.../#logo` opens Logo section directly
+## 📬 Contact
 
-📬 Contact & Links
+- Email: amrt6509@gmail.com
+- Phone: +20 155 165 7717
+- Instagram: https://www.instagram.com/3am_our1430
+- X: https://x.com/Amr2043275
+- GitHub: https://github.com/DEVVOLTX
+- Dev Portfolio: https://amressam.is-a.dev
 
-- *Email:* amrt6509@gmail.com
-- *Phone:* +20 155 165 7717
-- *Instagram:* https://www.instagram.com/3am_our1430
-- *X (Twitter):* https://x.com/Amr2043275
-- *GitHub:* https://github.com/DEVVOLTX
-- *Portfolio V1:* https://devvoltx.github.io/Amr/
-- *Dev Portfolio:* https://amressam.is-a.dev
+## 📄 License
 
-📝 Sections
-ID	Title	Content
-`main`	Main	Hero with 2026 badge + cutout
-`about`	About Me	Bio + Tools (Ps, Ai, Pr, PicsArt)
-`logo`	Logo	7 logos, new wolf featured
-`cars`	Car Posters	8 automotive posters
-`clients`	Client Work	Hamo Samy & Mohammed edits
-`contact`	Contact	All social links + badge
-📄 License
-
-© 2026 Amr Essam — A Wolf Brand. All designs and code are owned by Amr Essam. Please don't copy without permission.
-
----
-
-<p align="center">
-  <b>Built with ❤️ by DevVoltX</b><br/>
-  <sub>Available for Freelance — Let's create something bold.</sub>
-</p>
+© 2026 Amr Essam — AET Designs. All designs and code are owned by Amr Essam. Please don't copy without permission.
