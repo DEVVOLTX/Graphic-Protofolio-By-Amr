@@ -1,225 +1,82 @@
-/* =========================================
-   1- RESET & COLORS
-   زي Claude: أصفر فاتح + خلفية سوداء مزرقة
-========================================= */
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-:root{
-  --yellow:#ffe600; /* نفس أصفر Claude */
-  --white:#fff;
-  --ink:#0a0a14;
-  --card:#111;
-}
+:root{--yellow:#ffe600;--white:#fff;--ink:#0a0a14;--card:#111}
 html,body{height:100%}
 body{
-  font-family:'Inter',sans-serif;color:var(--white);
-  overflow:hidden;
-  /* الخلفية الذهبية من اليمين زي الصور 1 و 2 و 3 */
-  background:
-    radial-gradient(90% 70% at 85% 15%, #d8b24e 0%, #7a5a0a 32%, rgba(10,10,20,0) 65%),
-    var(--ink);
+  font-family:'Inter',sans-serif;color:var(--white);overflow:hidden;
+  background: radial-gradient(90% 70% at 85% 15%, #d8b24e 0%, #7a5a0a 32%, rgba(10,10,20,0) 65%), var(--ink);
 }
-ul{list-style:none}
-a{color:inherit;text-decoration:none}
+a{color:inherit;text-decoration:none} ul{list-style:none}
 
-/* =========================================
-   2- SIDEBAR -> نحوله TOP NAV زي Claude
-   كودك كان sidebar شمال، هنخليه فوق أفقي
-   من غير ما تغير HTML
-========================================= */
+/* TOP NAV زي Claude */
 .side{
-  position:fixed;
-  top:0;left:0;right:0;
-  height:54px;
-  width:100%;
-  display:flex;align-items:center;
-  padding:0 1rem;
-  background:rgba(16,15,25,.96);
-  backdrop-filter:blur(8px);
-  border-bottom:1px solid rgba(255,255,255,.08);
-  z-index:20;
-  overflow-x:auto;
+  position:fixed;top:0;left:0;right:0;height:54px;width:100%;
+  display:flex;align-items:center;gap:1.5rem;padding:0 1rem;
+  background:rgba(16,15,25,.97);backdrop-filter:blur(8px);
+  border-bottom:1px solid rgba(255,255,255,.08);z-index:20;overflow-x:auto
 }
-.side ul{
-  display:flex;flex-direction:row;gap:1.6rem;
-  white-space:nowrap;
-}
-.side a{
-  font-family:'Anton',sans-serif;
-  font-size:.88rem;letter-spacing:.04em;
-  text-transform:uppercase;
-  transition:color .2s, transform .2s;
-  display:block;
-}
-.side a:hover{color:var(--yellow);transform:translateY(-1px)}
-.side a.active{color:var(--yellow)}
+.brand-mini{display:flex;align-items:center;gap:.5rem;font-family:'Anton',sans-serif}
+.brand-mini img{width:32px;height:32px;object-fit:contain;border-radius:4px}
+.side ul{display:flex;flex-direction:row;gap:1.6rem;white-space:nowrap}
+.side a{font-family:'Anton',sans-serif;font-size:.88rem;letter-spacing:.04em;text-transform:uppercase;transition:.2s}
+.side a:hover{color:var(--yellow)} .side a.active{color:var(--yellow)}
+.side .dev{margin-left:auto} .side .dev a{color:var(--yellow);font-size:.7rem;border:1px solid var(--yellow);padding:.3rem .6rem;border-radius:4px}
 
-/* لوجو الذئب الصغير (لو موجود) */
-.brand-mini{display:none} /* نخفيه عشان يبقى زي Claude بالظبط */
-
-/* =========================================
-   3- STAGE & LINES
-   الخطين البيض اللي فوق وتحت زي الصور
-========================================= */
+/* STAGE + LINES */
 .stage{position:fixed;inset:54px 0 0 0}
-.panel{
-  position:absolute;inset:0;
-  padding:4.5rem 2.5rem 4rem 2rem;
-  opacity:0;visibility:hidden;
-  transform:translateY(14px);
-  transition:opacity .4s, transform .4s, visibility .4s;
-  overflow-y:auto;
-  z-index:1;
-}
+.panel{position:absolute;inset:0;padding:4.5rem 2.5rem 4rem 2rem;opacity:0;visibility:hidden;transform:translateY(14px);transition:.4s;overflow-y:auto;z-index:1}
 .panel.active{opacity:1;visibility:visible;transform:none}
+.stage::before,.stage::after{content:'';position:absolute;left:10%;right:10%;height:2px;z-index:0;pointer-events:none;background:linear-gradient(90deg,transparent,#fff 20%,#fff 80%,transparent)}
+.stage::before{top:1.4rem} .stage::after{bottom:1.4rem}
 
-/* الخطوط البيضاء */
-.stage::before,.stage::after{
-  content:'';
-  position:absolute;left:10%;right:10%;height:2px;
-  z-index:0;pointer-events:none;
-  background:linear-gradient(90deg,transparent,#fff 20%,#fff 80%,transparent);
-}
-.stage::before{top:1.4rem}
-.stage::after{bottom:1.4rem}
-.rule{display:none} /* كنا بنستخدمه قبل، دلوقتي بنستخدم ::before */
-
-/* =========================================
-   4- TITLES
-========================================= */
-.title{
-  font-family:'Anton',sans-serif;
-  font-size:clamp(2.4rem,6vw,4.2rem);
-  line-height:1;margin-bottom:1.8rem;
-  text-transform:uppercase;
-}
+/* TITLES */
+.title{font-family:'Anton',sans-serif;font-size:clamp(2.4rem,6vw,4.2rem);line-height:1;margin-bottom:1.8rem;text-transform:uppercase}
 .title.sm{font-size:clamp(1.6rem,3vw,2.2rem);margin:1.6rem 0 1rem}
 .w{color:#fff}.y{color:var(--yellow)}
 
-/* ظل خفيف زي Claude */
-.title .w{text-shadow:-14px 0 14px rgba(255,255,255,.12)}
-.title .y{text-shadow:-14px 0 14px rgba(255,230,0,.18)}
-
-/* =========================================
-   5- HERO - نفس صفحة MAIN
-========================================= */
-.hero{
-  position:absolute;left:2rem;top:48%;
-  transform:translateY(-50%);max-width:70%;
-}
-.year{font-family:'Anton',sans-serif;font-size:1.5rem;color:#fff}
-.year b{color:var(--yellow);font-weight:400}
-.giant{
-  font-family:'Anton',sans-serif;
-  font-size:clamp(4rem,13vw,9.5rem);
-  line-height:.92;text-transform:lowercase;
-}
-/* port أصفر - folio أبيض زي الصورة */
-.giant .w{color:var(--yellow)}
-.giant .y{color:#fff}
+/* HERO */
+.hero{position:absolute;left:2rem;top:48%;transform:translateY(-50%);max-width:70%}
+.year{font-family:'Anton',sans-serif;font-size:1.5rem;color:#fff} .year b{color:var(--yellow);font-weight:400}
+.giant{font-family:'Anton',sans-serif;font-size:clamp(4rem,13vw,9.5rem);line-height:.92;text-transform:lowercase}
+.giant .y{color:var(--yellow)} .giant .w{color:#fff}
 .role{font-family:'Anton',sans-serif;font-size:clamp(1.1rem,2.2vw,1.6rem);letter-spacing:.03em;margin-top:.6rem}
-.role b{color:var(--yellow);font-weight:400}
-.name{margin-top:.5rem;opacity:.7;letter-spacing:.3em;text-transform:uppercase;font-size:.7rem}
+.role b{color:var(--yellow);font-weight:400} .name{margin-top:.5rem;opacity:.7;letter-spacing:.3em;text-transform:uppercase;font-size:.7rem}
 
-/* =========================================
-   6- AVATAR - أفاتار الذئب بدال صورتك
-   نفس الفلتر الأبيض اللي كان على صورتك
-========================================= */
+/* WOLF LOGO - CUTOUT */
 .cutout{
-  position:absolute;right:4rem;bottom:0;
-  height:min(78vh,520px);width:auto;
-  object-fit:contain;
-  /* white stroke زي تصميمك القديم */
-  filter:
-    drop-shadow(2px 0 0 #fff) drop-shadow(-2px 0 0 #fff)
-    drop-shadow(0 2px 0 #fff) drop-shadow(0 -2px 0 #fff)
-    drop-shadow(0 18px 30px rgba(0,0,0,.55));
+  position:absolute;right:4rem;bottom:0;height:min(78vh,520px);width:auto;object-fit:contain;
+  /* ده بيشيل الخلفية السودا بتاعت اللوجو بتاعك ويخليه ينور */
+  mix-blend-mode:screen;
+  filter: drop-shadow(2px 0 0 #fff) drop-shadow(-2px 0 0 #fff) drop-shadow(0 2px 0 #fff) drop-shadow(0 -2px 0 #fff) drop-shadow(0 18px 30px rgba(0,0,0,.55));
 }
-.about-body+.cutout{height:min(70vh,460px)}
+.about-body+.cutout, .cutout.small{height:min(60vh,400px);right:2rem;opacity:.9}
 
-/* لو عايز تستخدم wolf-avatar.png - اعمل كده في HTML:
-   <img class="cutout" src="images/wolf-avatar.png" alt="Wolf">
-   والفلتر هيظبطه لوحده
-*/
-
-/* =========================================
-   7- ABOUT
-========================================= */
+/* ABOUT */
 .about-body{max-width:min(640px,55%);font-size:.88rem;line-height:1.7;color:#eee}
 .about-body p+p{margin-top:.8rem}
 .tools{display:flex;gap:.8rem;flex-wrap:wrap;margin-top:1rem}
-.tools li{
-  min-width:48px;height:48px;padding:0 .8rem;
-  border-radius:10px;display:grid;place-items:center;
-  font-weight:700;border:2px solid;background:rgba(0,0,0,.35)
-}
-.tools .ps{color:#31a8ff;border-color:#31a8ff}
-.tools .ai{color:#ff9a00;border-color:#ff9a00}
-.tools .pr{color:#c78cff;border-color:#9999ff}
-.tools .pa{color:#ff4fa3;border-color:#ff4fa3;font-size:.8rem}
+.tools li{min-width:48px;height:48px;padding:0 .8rem;border-radius:10px;display:grid;place-items:center;font-weight:700;border:2px solid;background:rgba(0,0,0,.35)}
+.tools .ps{color:#31a8ff;border-color:#31a8ff} .tools .ai{color:#ff9a00;border-color:#ff9a00} .tools .pr{color:#c78cff;border-color:#9999ff} .tools .pa{color:#ff4fa3;border-color:#ff4fa3;font-size:.8rem}
 .cta{display:flex;gap:.8rem;margin-top:1.6rem;flex-wrap:wrap}
 .cta a{background:var(--yellow);color:#000;padding:.65rem 1.4rem;border-radius:4px;font-family:'Anton',sans-serif;letter-spacing:.06em;text-transform:uppercase;font-size:.85rem}
 .cta a.ghost{background:none;color:var(--yellow);border:1px solid var(--yellow)}
 
-/* =========================================
-   8- GALLERIES - زي الصور 2 عمود
-========================================= */
+/* GRIDS - 2 عمود زي صورك */
 .grid{display:grid;gap:1rem;max-width:1100px}
-.g3{grid-template-columns:repeat(2,1fr)} /* خليناها 2 زي Claude مش 3 */
-.g4{grid-template-columns:repeat(2,1fr)} /* 2 برضه */
-.g2{grid-template-columns:repeat(2,1fr);max-width:760px}
-figure{position:relative;overflow:hidden;background:var(--card);border-radius:4px;box-shadow:0 12px 30px rgba(0,0,0,.5)}
-figure.featured{outline:2px solid #FF8C00;outline-offset:3px}
+.g3{grid-template-columns:repeat(2,1fr)} .g4{grid-template-columns:repeat(2,1fr)} .g2{grid-template-columns:repeat(2,1fr);max-width:760px}
+figure{position:relative;overflow:hidden;background:var(--card);border-radius:4px;box-shadow:0 12px 30px rgba(0,0,0,.5);aspect-ratio:1}
+.g4 figure{aspect-ratio:4/3}
+figure.featured{outline:2px solid var(--yellow);outline-offset:3px}
 figure img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s}
 figure:hover img{transform:scale(1.06)}
-.sq figure{aspect-ratio:1}
-.tall figure{aspect-ratio:4/3}
-figcaption{
-  position:absolute;left:0;right:0;bottom:0;
-  padding:1.2rem .7rem .6rem;
-  font-family:'Anton',sans-serif;font-size:.75rem;
-  text-transform:uppercase;
-  background:linear-gradient(transparent,rgba(0,0,0,.85));
-  transform:translateY(100%);transition:transform .3s;
-}
+figcaption{position:absolute;left:0;right:0;bottom:0;padding:1.2rem .7rem .6rem;font-family:'Anton',sans-serif;font-size:.75rem;text-transform:uppercase;background:linear-gradient(transparent,rgba(0,0,0,.85));transform:translateY(100%);transition:.3s}
 figure:hover figcaption{transform:none}
 
-/* =========================================
-   9- CONTACT
-========================================= */
-.contact{max-width:560px}
-.contact li{display:flex;justify-content:space-between;gap:1rem;padding:1rem 0;border-bottom:1px solid rgba(255,255,255,.2)}
+/* CONTACT */
+.contact{max-width:560px} .contact li{display:flex;justify-content:space-between;gap:1rem;padding:1rem 0;border-bottom:1px solid rgba(255,255,255,.2)}
 .contact span{font-family:'Anton',sans-serif;color:var(--yellow);letter-spacing:.06em;text-transform:uppercase}
 .contact a:hover{color:var(--yellow)}
-.badge{
-  display:inline-block;margin-top:1.6rem;
-  border:1px solid var(--yellow);color:var(--yellow);
-  padding:.4rem 1rem;border-radius:99px;
-  font-size:.75rem;letter-spacing:.15em;text-transform:uppercase;
-}
+.badge{display:inline-block;margin-top:1.6rem;border:1px solid var(--yellow);color:var(--yellow);padding:.4rem 1rem;border-radius:99px;font-size:.75rem;letter-spacing:.15em;text-transform:uppercase}
 
-/* =========================================
-   10- MOBILE - 2 عمود زي الصور بالظبط
-========================================= */
-@media (max-width:900px){
-  .about-body{max-width:100%}
-  .hero{position:static;transform:none;max-width:100%;margin-top:1.5rem}
-  .cutout,.about-body+.cutout{
-    position:relative;right:auto;bottom:auto;
-    display:block;margin:2rem auto 0;
-    width:min(80vw,340px);height:auto;
-  }
-}
-@media (max-width:700px){
-  body{overflow:auto}
-  .side{height:50px;padding:0 .8rem}
-  .side ul{gap:1rem}
-  .side a{font-size:.78rem}
-  .stage{inset:50px 0 0 0;position:relative}
-  .panel{position:relative;inset:auto;min-height:85vh;display:none;padding:2.5rem 1.2rem 3rem}
-  .panel.active{display:block;opacity:1;visibility:visible;transform:none}
-  .stage::before,.stage::after{left:5%;right:5%}
-  .g3,.g4{grid-template-columns:repeat(2,1fr)} /* 2 عمود في الموبايل زي صورك */
-  figcaption{transform:none;font-size:.65rem}
-  .title .w,.title .y{text-shadow:none}
-}
-@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+/* MOBILE */
+@media (max-width:900px){.about-body{max-width:100%} .hero{position:static;transform:none;max-width:100%;margin-top:1.5rem} .cutout,.cutout.small{position:relative;right:auto;bottom:auto;display:block;margin:2rem auto 0;width:min(80vw,340px);height:auto}}
+@media (max-width:700px){body{overflow:auto} .side{height:50px;padding:0 .8rem} .side ul{gap:1rem} .side a{font-size:.78rem} .stage{inset:50px 0 0 0;position:relative} .panel{position:relative;inset:auto;min-height:85vh;display:none;padding:2.5rem 1.2rem 3rem} .panel.active{display:block;opacity:1;visibility:visible;transform:none} .stage::before,.stage::after{left:5%;right:5%} figcaption{transform:none;font-size:.65rem}}
