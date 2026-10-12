@@ -1,47 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- ========== META & SEO ========== -->
+  <!-- ===== META & SEO ===== -->
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <meta name="description" content="Amr Essam — Graphic Designer & Developer, A Wolf Brand 2026"/>
-  <meta name="theme-color" content="#FF8C00"/>
-  <meta property="og:image" content="images/wolf-a-logo.png"/>
+  <meta name="description" content="Amr Essam - A Wolf Brand 2026"/>
   <link rel="icon" href="images/wolf-a-logo.png"/>
-  
   <title>Amr Essam — A.ESSAM</title>
 
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;600;700&display=swap" rel="stylesheet"/>
+  <!-- ===== FONTS ===== -->
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;600&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
 
-<!-- ========== SIDEBAR NAV ========== -->
-<aside class="side" id="side">
-  <!-- Logo Brand Mini (top) -->
+<!-- ======================
+     SIDEBAR - القائمة الجانبية
+======================= -->
+<aside class="side">
+  <!-- لوجو صغير فوق (بيختفي في الموبايل) -->
   <div class="brand-mini">
-    <img src="images/wolf-a-logo.png" alt="A Wolf Logo"/>
+    <img src="images/wolf-a-logo.png" alt="Wolf Logo"/>
     <span>A.ESSAM</span>
   </div>
 
-  <!-- Navigation Links -->
-  <ul role="tablist">
-    <li><a href="#main" data-t="main" class="active">Main</a></li>
-    <li><a href="#about" data-t="about">About Me</a></li>
-    <li><a href="#logo" data-t="logo">Logo</a></li>
-    <li><a href="#cars" data-t="cars">Car Posters</a></li>
-    <li><a href="#clients" data-t="clients">Client Work</a></li>
-    <li><a href="#contact" data-t="contact">Contact</a></li>
-    <!-- External Dev Portfolio -->
-    <li class="dev-link"><a href="https://amressam.is-a.dev" target="_blank">→ Dev Portfolio</a></li>
+  <!-- روابط الأقسام -->
+  <ul>
+    <li><a href="#main" data-t="main" class="active">MAIN</a></li>
+    <li><a href="#about" data-t="about">ABOUT ME</a></li>
+    <li><a href="#logo" data-t="logo">LOGO</a></li>
+    <li><a href="#cars" data-t="cars">CAR POSTERS</a></li>
+    <li><a href="#clients" data-t="clients">CLIENT WORK</a></li>
+    <li><a href="#contact" data-t="contact">CONTACT</a></li>
+    <li class="dev-link"><a href="https://amressam.is-a.dev" target="_blank">→ DEV PORTFOLIO</a></li>
   </ul>
 </aside>
 
-<!-- ========== MAIN CONTENT STAGE ========== -->
+<!-- ======================
+     STAGE - منطقة العرض
+======================= -->
 <main class="stage">
 
-  <!-- MAIN HERO SECTION -->
+  <!-- MAIN SECTION -->
   <section class="panel active" id="main">
     <div class="hero">
       <p class="year">20<b>26</b></p>
@@ -49,50 +49,31 @@
       <p class="role">GRAPHICS <b>+ CODE</b></p>
       <p class="name">Amr Essam — A Wolf Brand</p>
     </div>
-    <img class="cutout" src="images/avatar-cutout.png" alt="Amr Essam Portrait"/>
+    <!-- صورة البورتريه: لو مش موجودة هتختفي لوحدها -->
+    <img class="cutout" src="images/avatar-cutout.png" alt="" onerror="this.style.display='none'"/>
   </section>
 
-  <!-- ABOUT SECTION -->
+  <!-- ABOUT -->
   <section class="panel" id="about">
     <h2 class="title"><span class="w">ABOUT</span> <span class="y">ME!</span></h2>
-    <div class="about-body">
-      <p>Hi, I'm Amr Essam from Kafr El Dawar, Egypt. Graphic Designer + Software Engineering student.</p>
-    </div>
-    <img class="cutout" src="images/avatar-cutout.png" alt="Amr Essam" loading="lazy"/>
+    <p>Founder of A Wolf Brand - Graphic Designer from Egypt.</p>
   </section>
 
-  <!-- LOGO GALLERY - Main brand first -->
+  <!-- LOGO GALLERY -->
   <section class="panel" id="logo">
     <h2 class="title"><span class="w">LO</span><span class="y">GO</span></h2>
     <div class="grid g3 sq">
-      <!-- Featured New Brand -->
       <figure class="featured">
-        <img src="images/wolf-a-logo.png" alt="A Wolf Main Brand 2026"/>
-        <figcaption>A Wolf - Main Brand 2026</figcaption>
+        <img src="images/wolf-a-logo.png" alt="Wolf Brand"/>
+        <figcaption>A Wolf - Main 2026</figcaption>
       </figure>
-      <!-- Old Logos -->
-      <figure><img src="images/logo1.jpg" alt="Logo 1"/><figcaption>AMR Official</figcaption></figure>
-      <figure><img src="images/logo2.jpg" alt="Logo 2"/><figcaption>AMR Essam</figcaption></figure>
     </div>
   </section>
 
-  <!-- CARS SECTION -->
-  <section class="panel" id="cars">
-    <h2 class="title"><span class="w">CAR</span> <span class="y">POSTERS!</span></h2>
-    <div class="grid g4 tall">
-      <figure><img src="images/car1.jpg" alt="Car 1" loading="lazy"/><figcaption>BMW M4</figcaption></figure>
-      <!-- ... باقي العربيات ... -->
-    </div>
-  </section>
-
-  <!-- CONTACT -->
-  <section class="panel" id="contact">
-    <h2 class="title"><span class="w">GET IN</span> <span class="y">TOUCH</span></h2>
-    <ul class="contact">
-      <li><span>Email</span><a href="mailto:amrt6509@gmail.com">amrt6509@gmail.com</a></li>
-      <li><span>Phone</span><a href="tel:+201551657717">+20 155 165 7717</a></li>
-    </ul>
-  </section>
+  <!-- باقي الأقسام -->
+  <section class="panel" id="cars"><h2 class="title"><span class="w">CAR</span> <span class="y">POSTERS!</span></h2></section>
+  <section class="panel" id="clients"><h2 class="title"><span class="w">CLIENT</span> <span class="y">WORK</span></h2></section>
+  <section class="panel" id="contact"><h2 class="title"><span class="w">GET IN</span> <span class="y">TOUCH</span></h2></section>
 
 </main>
 
